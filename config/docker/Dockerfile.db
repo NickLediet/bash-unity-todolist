@@ -1,0 +1,9 @@
+FROM mysql:latest
+RUN mkdir scripts
+COPY ./scripts/db.sql /scripts
+WORKDIR /scripts
+RUN which mysql
+RUN /bin/mysql start && \
+         mysql -u root -p$MYSQL_ROOT_PASSWORD  -e "GRANT ALL PRIVILEGES ON *.* TO 'comeon'@'%' IDENTIFIED BY 'password';FLUSH PRIVILEGES;" && \
+        mysql -u root -p$MYSQL_ROOT_PASSWORD $MYSQL_DATABASE  < /scripts/db.sql
+

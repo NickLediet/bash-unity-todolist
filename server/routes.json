@@ -1,0 +1,29 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "route": "^\/todos\/[0-9]+/$",
+      "controller": "get_todo.sh"
+    },
+    {
+      "method": "GET",
+      "route": "^\/todos\/$",
+      "controller": "get_todos.sh"
+    },
+    {
+      "method": "POST",
+      "route": "^\/todos\/$",
+      "controller": "create_todo.sh"
+    },
+    {
+      "method": "PUT",
+      "route": "^\/todos\/[0-9]+\/$",
+      "controller": "update_todo.sh"
+    },
+    {
+      "method": "DELETE",
+      "route": "^\/todos\/[0-9]+\/$",
+      "controller": "delete_todo.sh"
+    }
+  ]
+}
